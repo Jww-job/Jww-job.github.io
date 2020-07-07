@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue简单知识点, 小维先生">
+    <meta name="keywords" content="archives, 小维先生">
     <meta name="description" content="不忘初心，方得始终">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue简单知识点 | 小维先生</title>
+    <title>archives | 小维先生</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -264,12 +264,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue简单知识点</h1>
+                    <h1 class="description center-align post-title">archives</h1>
                 </div>
             </div>
         </div>
@@ -384,25 +384,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tag/Vue/">
-                                <span class="chip bg-color">Vue</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/category/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -427,414 +414,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="VUE系统学习"><a href="#VUE系统学习" class="headerlink" title="VUE系统学习"></a>VUE系统学习</h3><hr>
-<h3 id="vue的特点"><a href="#vue的特点" class="headerlink" title="vue的特点"></a>vue的特点</h3><ol>
-<li>使用npm install -g vue-cli安装脚手架</li>
-<li>vue –version 或者 vue -v查看版本以及是否安装成功</li>
-</ol>
-<hr>
-<h3 id="vue的工作模式"><a href="#vue的工作模式" class="headerlink" title="vue的工作模式"></a>vue的工作模式</h3><ol>
-<li>vue区别于传统的编程方式，是一种声明式编程，完全的数据与页面分离的开发</li>
-<li>在我们进行vue开发的时候，首先是创建了一个vue对象</li>
-<li>创建vue对象的时候，传入了一些options：{}，这个{}中包括了el：这个属性决定了vue挂载到哪个元素上，data：包含了我们需要的数据</li>
-</ol>
-<hr>
-<h3 id="vue的数据"><a href="#vue的数据" class="headerlink" title="vue的数据"></a>vue的数据</h3><ol>
-<li><p>拿到数据时，使用v-for来进行数据处理</p>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
-     &lt;ul&gt;
-         &lt;li v-for=&quot;item in lists&quot;&gt;{{item}}&lt;/li&gt;
-     &lt;/ul&gt;
- &lt;/div&gt;
- &lt;script&gt;
-     const app = new Vue({
-         el : &#39;#app&#39;,
-         data : {
-             message: &#39;my list&#39;,
-             lists: [&#39;香蕉&#39;,&#39;苹果&#39;,&#39;梨子&#39;,&#39;榴莲&#39;]
-         }
-     })
- &lt;/script&gt;</code></pre></li>
-<li><p>通过v-on来监听事件，也可以使用@click方式，在options中，methods提供方法的创建</p>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
-     &lt;h2&gt;当前计数为:{{math}}&lt;/h2&gt;
-     &lt;!-- &lt;button v-on:click=&#39;math++&#39;&gt;+&lt;/button&gt;
-     &lt;button v-on:click=&#39;math--&#39;&gt;_&lt;/button&gt; --&gt;
-     &lt;button @click=&#39;add&#39;&gt;+&lt;/button&gt;
-     &lt;button @click=&#39;dec&#39;&gt;_&lt;/button&gt;
- &lt;/div&gt;
-
- &lt;script&gt;
-     const app = new Vue({
-         el : &#39;#app&#39;,
-         data : {
-             math: 0
-         },
-         methods: {
-             add: function(){
-                 this.math++
-             },
-             dec: function(){
-                 const math1 = this.math;
-                 if(math1 &gt; 0){
-                     this.math--
-                 }else{
-                     this.math == 0
-                 }
-
-             }
-         }
-     })
- &lt;/script&gt;</code></pre></li>
-<li><p>vue中的mvvm Dom listeners Data Bindings</p>
-</li>
-<li><p>vue的生命周期：new Vue创建实例对象 =&gt; init options初始化 =&gt; brfore created =&gt; created =&gt; before mounted =&gt; mounted =&gt; before updated =&gt; updated</p>
-</li>
-<li><p>mustache语法，语法中不仅可以直接编写变量，也可以写简单的表达式</p>
-</li>
-<li><p>v-once语法，当不想随意改变一个数据时，添加v-once，一般不使用</p>
-</li>
-<li><p>v-text语法，用于改变文本，不建议使用，如果加上mustache语法的话，会覆盖掉改变的文本</p>
-</li>
-<li><p>v-pre语法：将子元素显示出来，不进行解析</p>
-</li>
-<li><p>插值闪烁，在vue2.6版本已经解决，低版本可以使用v-cloak，vue解析之前，div中有一个属性v-cloak，解析之后没有v-cloak</p>
-</li>
-<li><p>v-bind语法，动态绑定,例如图片等，可以简写成：</p>
-</li>
-<li><p>对象语法： v-bind:class=”{}”</p>
-</li>
-<li><p>数组语法： v-bind:class=”[]”</p>
-</li>
-</ol>
-<hr>
-<h3 id="vue的计算属性computed"><a href="#vue的计算属性computed" class="headerlink" title="vue的计算属性computed"></a>vue的计算属性computed</h3><ol>
-<li>computed属性存在缓存，不需要再每次调用的时候都进行重新计算。</li>
-<li>get和set方法，一般不使用set方法进行设置，只使用get方法为只读属性</li>
-<li>一些小问题：在进行切换用户登录方式的时候，如果输入了内容，切换后会将输入的内容带过来。解析：因为在vue中，渲染虚拟dom时，会尽可能的复用已经存在的元素，而不是重新创建。  解决办法：在input中加入key=””值，加上标签，就不会进行复用</li>
-<li>v-if和V-show：v-if和v-show都能决定一个元素是否进行渲染，不过当v-if为false时，根本不会有元素出现在dom中，当v-show为false时，相当于将元素设置了一个display：none。    当我们要在现实和隐藏之间切换频繁时，使用v-show，当只有一次切换的时候，可以使用v-if。</li>
-<li>使用v-for遍历对象时，如果只是获取一个值，那么获取的是value值</li>
-</ol>
-<pre><code>&lt;li v-for = &quot;(value,key,index) in arr&quot;&gt;{{key}} {{value}}&lt;/li&gt;</code></pre><ol start="6">
-<li>在使用vue中的过滤器filters时，会出现局部过滤器没有效果且报错的情况。这时我们可以在实例外定义一个全局的过滤器，这样就可以产生效果了</li>
-</ol>
-<pre><code>//定义全局的过滤器
-Vue.filter(&#39;showPrice&#39;,function(price) {
-    return &quot;¥&quot; + price.toFixed(2);
-});
-
-//在html代码中使用过滤器
-&lt;td&gt;{{item.price | showPrice}}&lt;/td&gt;</code></pre><ol start="7">
-<li>JavaScript高阶函数 filter/map/reduce</li>
-</ol>
-<ul>
-<li>filter的回调函数必须为一个boolean值</li>
-<li>当返回为true时，函数内部会自动将这次回调的n加入到新的数组中</li>
-<li>当返回false时，函数内部会过滤掉这次的n</li>
-</ul>
-<pre><code>//filter的使用
-const nums = [22,333,12,1412,222,543,15];
-
-let newNums = nums.filter(function(n) {
-    return n &gt; 100;//条件判断，为布尔值
-});
-
-console.log(newNums);</code></pre><ul>
-<li>map函数的使用</li>
-</ul>
-<pre><code>// map的使用
-let new2Nums = nums.map(function(n) {
-    return n*2;
-})
-
-console.log(new2Nums);</code></pre><ul>
-<li>reduce的使用：对数组中的所有内容进行汇总</li>
-</ul>
-<pre><code>// reduce的使用
-let total = newNums.reduce(function(preValue,n){
-    return preValue + n;
-},0)
-
-console.log(total);</code></pre><ul>
-<li>综合写法</li>
-</ul>
-<pre><code>let totalMath = nums.filter(function(n) {
-    return n&lt;100;
-}).map(function(n) {
-    return n *2;
-}).reduce(function(preValue,n){
-    return preValue + n;
-},0);
-
-console.log(totalMath);
-
-// 终极写法
-let tatal2 = nums.filter(n =&gt; n &lt; 100).map(n =&gt; n * 2).reduce((pre,n) =&gt; pre + n);
-
-console.log(tatal2);</code></pre><ol start="8">
-<li>v-model表单绑定</li>
-</ol>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
-//三种进行数据绑定的写法
-        &lt;input type=&quot;value&quot; v-model=&quot;message&quot; name=&quot;&quot;&gt;
-        &lt;!-- &lt;input type=&quot;value&quot; :value=&quot;message&quot; v-on:input=&quot;valueChange&quot;&gt; --&gt;
-        &lt;!-- &lt;input type=&quot;value&quot; :value=&quot;message&quot; @input=&quot; message = $event.target.value&quot;&gt; --&gt;
-        &lt;h2&gt;{{message}}&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        const app = new Vue({
-            el : &#39;#app&#39;,
-            data : {
-                message: &#39;my list&#39;,
-            },
-            methods:{
-                valueChange(event){
-                    this.message = target.value;
-                }
-            }
-        })
-    &lt;/script&gt;</code></pre><ol start="9">
-<li>v-model与radio的绑定</li>
-</ol>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
-        &lt;label for=&quot;male&quot;&gt;
-            &lt;input type=&quot;radio&quot; value=&quot;男&quot; id=&quot;male&quot; v-model=&quot;sex&quot;&gt;男
-        &lt;/label&gt;
-
-        &lt;label for=&quot;formale&quot;&gt;
-            &lt;input type=&quot;radio&quot; value=&quot;女&quot; id=&quot;formale&quot; v-model=&quot;sex&quot;&gt;女
-        &lt;/label&gt;
-
-        &lt;h2&gt;您选择的性别是：{{sex}}&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        const app = new Vue({
-            el : &#39;#app&#39;,
-            data : {
-                message : &#39;my list&#39;,
-                sex : &quot;男&quot;
-            },
-
-        })
-    &lt;/script&gt;</code></pre><ol start="10">
-<li>v-model与checkbox</li>
-</ol>
-<ul>
-<li>单选框时，是使用布尔值</li>
-<li>多选框时，使用的是value值</li>
-</ul>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
-        &lt;input type=&quot;checkbox&quot; name=&quot;&quot; value=&quot;篮球&quot; v-model=&quot;hobbles&quot;&gt;篮球
-        &lt;input type=&quot;checkbox&quot; name=&quot;&quot; value=&quot;足球&quot; v-model=&quot;hobbles&quot;&gt;足球
-        &lt;input type=&quot;checkbox&quot; name=&quot;&quot; value=&quot;乒乓球&quot; v-model=&quot;hobbles&quot;&gt;乒乓球
-        &lt;input type=&quot;checkbox&quot; name=&quot;&quot; value=&quot;橄榄球&quot; v-model=&quot;hobbles&quot;&gt;橄榄球
-
-        &lt;h2&gt;你选择了：{{hobbles}}&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        const app = new Vue({
-            el : &#39;#app&#39;,
-            data : {
-                message: &#39;my list&#39;,
-                isAgree : false,
-                hobbles : []
-            },
-        })
-    &lt;/script&gt;</code></pre><ol start="11">
-<li>修饰符</li>
-</ol>
-<ul>
-<li>v-model.lazy 让数据在失去焦点或者回车的时候才发生改变</li>
-<li>v-model.number 默认情况下输入的是string类型,使用number修饰符可以直接得到number类型</li>
-<li>v-model.trim 自动去掉输入的空格，但是只是去掉收尾输入的空格</li>
-</ul>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
-        &lt;input type=&quot;value&quot; name=&quot;&quot; v-model.lazy=&quot;message&quot;&gt;
-        &lt;h2&gt;{{message}}&lt;/h2&gt;
-
-        &lt;input type=&quot;value&quot; name=&quot;&quot; v-model.number.lazy=&quot;age&quot;&gt;
-        &lt;h2&gt;{{age}}&lt;/h2&gt;
-
-        &lt;input type=&quot;value&quot; name=&quot;&quot; v-model.trim.lazy=&quot;name&quot;&gt;
-        &lt;h2&gt;{{name}}&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        const app = new Vue({
-            el : &#39;#app&#39;,
-            data : {
-                message: &#39;my list&#39;,
-                age : 0,
-                name:&#39;&#39;
-            },
-        })
-    &lt;/script&gt;</code></pre><hr>
-<h3 id="vue的组件化"><a href="#vue的组件化" class="headerlink" title="vue的组件化"></a>vue的组件化</h3><ol>
-<li>组件的使用步骤</li>
-</ol>
-<ul>
-<li>创建组件构造器 调用Vue.extend()方法创建组件构造器，在2.X0的版本中不使用这种方法创建构造器了</li>
-<li>注册组件 调用Vue.component(注册组件的标签名，组件构造器)注册组件</li>
-<li>使用组件 在Vue的实例范围内使用组件</li>
-</ul>
-<ol start="2">
-<li>全局组件和局部组件</li>
-</ol>
-<ul>
-<li>注册组件的语法糖写法</li>
-</ul>
-<pre><code>// 注册全局组件的语法糖
-        Vue.component(&#39;cpn&#39;,{
-            template: ` 
-                &lt;div&gt;
-                    &lt;h2&gt;撒豆安监局爱迪欧叫&lt;/h2&gt;
-                    &lt;p&gt;我是内容设施安徽撒谎&lt;/p&gt;
-                    &lt;p&gt;我是内容设施安徽撒谎&lt;/p&gt;
-                &lt;/div&gt;
-            `
-        })
-
-//局部注册组件的语法糖
-            components : {
-                &#39;cpn22&#39; : {
-                    template : ` 
-                &lt;div&gt;
-                    &lt;h2&gt;撒豆安监局爱迪欧叫&lt;/h2&gt;
-                &lt;/div&gt;
-            `
-        }
-            }</code></pre><ol start="3">
-<li>组件模板的抽离写法</li>
-</ol>
-<pre><code>&lt;!-- 1,使用script标签 --&gt;
-    &lt;script type=&quot;text/x-template&quot; id=&quot;cpn1&quot;&gt;
-        &lt;div&gt;
-                    &lt;h2&gt;撒豆安监局爱迪欧叫&lt;/h2&gt;
-                    &lt;p&gt;我是内容设施安徽撒谎&lt;/p&gt;
-                    &lt;p&gt;我是内容设施安徽撒谎&lt;/p&gt;
-                &lt;/div&gt;
-    &lt;/script&gt;
-
-    &lt;!-- 2.使用template标签 --&gt;
-
-    &lt;template id=&quot;cpn2&quot;&gt;
-        &lt;div&gt;
-                    &lt;h2&gt;撒豆安监局爱迪欧叫&lt;/h2&gt;
-                    &lt;p&gt;我是内容设施安徽撒谎&lt;/p&gt;
-                &lt;/div&gt;
-    &lt;/template&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        Vue.component(&#39;cpn1&#39;,{
-            template : &#39;#cpn1&#39;
-        })
-        Vue.component(&#39;cpn&#39;,{
-            template : &#39;#cpn2&#39;
-        })</code></pre><ol start="4">
-<li>父子组件通信 父传子props</li>
-</ol>
-<ul>
-<li>子组件不能引用父组件或Vue实例的数据的</li>
-<li>通过props像子组件传递数据，通过子组件像父组件发送消息</li>
-<li>子组件传父组件 $emit event</li>
-<li>props的值有两种类型<ul>
-<li>字符串数组，数组中的字符串就是传递时的名称</li>
-<li>对象，对象可以设置传递时的类型，也可以设置默认值</li>
-</ul>
-</li>
-</ul>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
-        &lt;cpn :cmovies = &#39;movies&#39; :cmessage = &#39;message&#39;&gt;&lt;/cpn&gt;
-    &lt;/div&gt;
-    &lt;template id=&quot;cpn&quot;&gt;
-        &lt;div&gt;
-            &lt;ul&gt;
-                &lt;li v-for = &#39;item in cmovies&#39;&gt;{{item}} &lt;/li&gt;
-            &lt;/ul&gt;
-            &lt;h2&gt;{{cmessage}}&lt;/h2&gt;
-        &lt;/div&gt;
-    &lt;/template&gt;
-    &lt;script&gt;
-        // 父传子使用props
-        const cpn = {
-            template : &#39;#cpn&#39;,
-            // props : [&#39;cmovies&#39;,&#39;cmessage&#39;] //数组形式，还可以为对象形式
-            props: {
-                //类型限制
-                // cmovies : Array, //要求传入的数据类型
-                //设置默认值
-
-                cmessage : {
-                    type : String,
-                    default : &#39;无参数&#39;,
-                    required : true //设置了这个值之后，就变成了必传值
-                },
-                //类型是一个数组或者对象时，默认值必须是一个函数
-                cmovies : {
-                    type : Array,
-                    default(){
-                        return []
-                    }
-                },
-            }
-        }
-        const app = new Vue({
-            el : &#39;#app&#39;,
-            data : {
-                message: &#39;my list&#39;,
-                movies : [&#39;sss&#39;,&#39;dasad&#39;,&#39;wwwwwwwda&#39;]
-            },
-            components : {
-                cpn
-            }
-        })
-    &lt;/script&gt;</code></pre><pre><code> &lt;!-- 父组件模板 --&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        &lt;cpn @aclick = &quot;cpclick&quot;&gt;&lt;/cpn&gt;
-    &lt;/div&gt;
-    &lt;!-- 子组件模板 --&gt;
-    &lt;template id=&quot;cpn&quot;&gt;
-        &lt;div&gt;
-            &lt;button v-for = &#39;item in categeries&#39; @click=&quot;btnClick(item)&quot;&gt;{{item.name}}&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/template&gt;
-    &lt;script&gt;
-        // 子组件
-        const cpn = {
-            template : &#39;#cpn&#39;,
-            data() {
-                return {
-                    categeries : [
-                    {id : &#39;aaa&#39;, name:&#39;热门推荐&#39;},
-                    {id : &#39;bbb&#39;, name:&#39;休闲服装&#39;},
-                    {id : &#39;ccc&#39;, name:&#39;运动&#39;},
-                    {id : &#39;ddd&#39;, name:&#39;数码产品&#39;}
-                    ]
-                }              
-            },
-            methods : {
-                btnClick(item){
-                    // console.log(item);子传父，使用自定义事件
-                    this.$emit(&#39;aclick&#39;,item)
-                }
-            }
-        };
-        const app = new Vue({
-            el : &#39;#app&#39;,
-            data : {
-                message: &#39;my list&#39;,
-                movies : [&#39;sss&#39;,&#39;dasad&#39;,&#39;wwwwwwwda&#39;]
-            },
-            components : {
-                cpn
-            },
-            methods : {
-                cpclick(item){
-                    console.log(item);                  
-                }
-            }
-        })
-    &lt;/script&gt;</code></pre>
+                
             </div>
             <hr/>
 
@@ -859,7 +439,7 @@ console.log(tatal2);</code></pre><ol start="8">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jww-job.github.io/2020/07/07/Vue%E7%AE%80%E5%8D%95%E7%9F%A5%E8%AF%86%E7%82%B9/">https://jww-job.github.io/2020/07/07/Vue%E7%AE%80%E5%8D%95%E7%9F%A5%E8%AF%86%E7%82%B9/</a>
+                    <a href="https://jww-job.github.io/archives/index.html">https://jww-job.github.io/archives/index.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -896,11 +476,7 @@ console.log(tatal2);</code></pre><ol start="8">
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tag/Vue/">
-                                    <span class="chip bg-color">Vue</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1071,26 +647,19 @@ console.log(tatal2);</code></pre><ol start="8">
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/07/07/Vue%E7%AE%80%E5%8D%95%E7%9F%A5%E8%AF%86%E7%82%B9/">
+                <a href="/archives/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Vue简单知识点">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="archives">
                         
-                        <span class="card-title">Vue简单知识点</span>
+                        <span class="card-title">archives</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VUE系统学习
-vue的特点
-使用npm install -g vue-cli安装脚手架
-vue –version 或者 vue -v查看版本以及是否安装成功
-
-
-vue的工作模式
-vue区别于传统的编程方式，是一种声明式编程，完全的数据与
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1099,25 +668,13 @@ vue区别于传统的编程方式，是一种声明式编程，完全的数据�
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/category/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Jww
                             
                         </span>
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tag/Vue/">
-                        <span class="chip bg-color">Vue</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
@@ -1125,26 +682,22 @@ vue区别于传统的编程方式，是一种声明式编程，完全的数据�
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/07/JS%E5%92%8CES6%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E5%8C%BA%E5%88%AB/">
+                <a href="/archives/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JS和ES6语法的使用和区别">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="archives">
                         
-                        <span class="card-title">JS和ES6语法的使用和区别</span>
+                        <span class="card-title">archives</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            js 和 ES6语法的使用和区别
-变量声明
-js中有三种声明方式 var let const
-var为全局作用域，如果有if语句，使用var声明变量，在if语句外，有相同的变量会造成冲突
-let和const的区别在于，let可以重新赋值,而
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1153,24 +706,13 @@ let和const的区别在于，let可以重新赋值,而
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/category/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Jww
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tag/Js/">
-                        <span class="chip bg-color">Js</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
