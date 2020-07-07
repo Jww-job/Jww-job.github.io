@@ -430,14 +430,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/%E6%A0%87%E7%AD%BE/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/%E6%A0%87%E7%AD%BE/Js/">
+                                <span class="chip bg-color">Js</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/%E5%88%86%E7%B1%BB/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -473,9 +482,9 @@
 <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
 <li>String。Numbers，Boolean，null，undefined</li>
 <li>js中没有设置浮点数,小数和整数在判断类型时都为number</li>
-<li>传统字符串拼接采用 + 的方法来进行，较为复杂，在ES6中使用模板字符串来进行拼接，使用${}的方式<pre><code>console.log(`my name is ${name} and I am &amp;{age}`)//切记使用反引号</code></pre></li>
+<li>传统字符串拼接采用 + 的方法来进行，较为复杂，在ES6中使用模板字符串来进行拼接，使用${}的方式</li>
 </ol>
-<hr>
+<pre><code>console.log(`my name is ${name} and I am &amp;{age}`)//切记使用反引号</code></pre><hr>
 <h4 id="字符串的属性和方法"><a href="#字符串的属性和方法" class="headerlink" title="字符串的属性和方法"></a>字符串的属性和方法</h4><ol>
 <li>字符串的数量 length</li>
 <li>将字符串改变为大写 touppercase</li>
@@ -510,68 +519,135 @@
     }
 ];</code></pre><ol>
 <li>使用JSON.Stringfy()方法将键值对转化为json数据</li>
-<li>for循环来循环数组<pre><code> for (let i = 0;i&lt; arr.length; i++){
- console.log(arr[i]);
-}</code></pre></li>
-<li>for…of循环数据(查看数据时不需要添加索引值)<pre><code> for(let arr1 of arr){
-     console.log(arr.text);
-}</code></pre></li>
-<li>foreach,map,filter(foreach和map都是迭代器，filter是选择器)<pre><code> arr.foreach(function(arr1){
-     console.log(arr1.text);
-});</code></pre>使用map会返回一个数值，可以定义变量<pre><code>const arr2 = arr.map(function(arr1){
-     return arr1.text; 返回数组
-});
-</code></pre></li>
+<li>for循环来循环数组</li>
 </ol>
-<p>console.log(arr2);</p>
-<p>const isCool = arr.filter(function(arr1){<br>        return arr1.isCool === true;<br>});</p>
-<p>console.log(isCool);</p>
-<p>可以链接<br>const isCool = arr.filter(function(arr1){<br>        return arr1.isCool === true;<br>}).map(function(arr1){<br>        return arr1.text;<br>});</p>
-<p>console.log(isCool);</p>
-<pre><code>
-5. ==和===的区别，==不关注数据类型
-6. 三元操作符 </code></pre><pre><code>const x = 10;
-const y = x &gt; 10 ? 20 : 30;</code></pre><pre><code>*** 
+<pre><code>    for (let i = 0;i&lt; arr.length; i++){
+    console.log(arr[i]);
+}</code></pre><ol start="3">
+<li>for…of循环数据(查看数据时不需要添加索引值)</li>
+</ol>
+<pre><code>    for(let arr1 of arr){
+        console.log(arr.text);
+}</code></pre><ol start="4">
+<li>foreach,map,filter(foreach和map都是迭代器，filter是选择器)</li>
+</ol>
+<pre><code>    arr.foreach(function(arr1){
+        console.log(arr1.text);
+});</code></pre><p>使用map会返回一个数值，可以定义变量</p>
+<pre><code>const arr2 = arr.map(function(arr1){
+        return arr1.text; 返回数组
+});
 
-### 函数
-1. ES6箭头函数</code></pre><pre><code>const addNums = (num1,num2) =&gt; num1 + num2;
-console.log(addNums(5,5));
+console.log(arr2);
 
-arr.foreach(arr1) =&gt; console.log(arr1);</code></pre><pre><code>2. 面向对象，可以通过构造函数来创建对象,原型链或者ES6的类来给对象添加方法
-    通过构造函数来实例化对象</code></pre><pre><code>function Person(firstName，lastName，dob){
-this.firstName = firstName;
-this.lastName = lastName;
-this.dob = dob;
-this.dob = new Date(dob);为了得到日期
-this.getYear = function(){
+const isCool = arr.filter(function(arr1){
+        return arr1.isCool === true;
+});
+
+console.log(isCool);
+
+可以链接
+const isCool = arr.filter(function(arr1){
+        return arr1.isCool === true;
+}).map(function(arr1){
+        return arr1.text; 
+});
+
+console.log(isCool);</code></pre><ol start="5">
+<li>==和===的区别，==不关注数据类型</li>
+<li>三元操作符 </li>
+</ol>
+<pre><code>    const x = 10;
+    const y = x &gt; 10 ? 20 : 30;</code></pre><hr>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
+<li>ES6箭头函数</li>
+</ol>
+<pre><code>    const addNums = (num1,num2) =&gt; num1 + num2;
+    console.log(addNums(5,5));
+
+    arr.foreach(arr1) =&gt; console.log(arr1);</code></pre><ol start="2">
+<li>面向对象，可以通过构造函数来创建对象,原型链或者ES6的类来给对象添加方法<br> 通过构造函数来实例化对象</li>
+</ol>
+<pre><code>    function Person(firstName，lastName，dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = dob;
+    this.dob = new Date(dob);为了得到日期
+    this.getYear = function(){
+        return this.dob.getFullYear();
+    }
+}
+ //通过原型增加
+Person.prototype.getYear = function(){
     return this.dob.getFullYear();
-}</code></pre><p>}<br> //通过原型增加<br>Person.prototype.getYear = function(){<br>    return this.dob.getFullYear();<br>}</p>
-<p>const person1 = new Person(‘John’,’Doe’,’4-3-1980’);</p>
-<p>// Class<br>class Person{<br>    constructor(firstName，lastName，dob){<br>        this.firstName = firstName;<br>        this.lastName = lastName;<br>        this.dob = dob;<br>        this.dob = new Date(dob);为了得到日期<br>    }</p>
-<pre><code>getYear(){
-    return this.dob.getFullYear();
-}</code></pre><p>}</p>
-<pre><code>*** 
+}
 
-### DOM操作
-1. 选择HTML元素,推荐使用queryselector
-2. 遍历元素</code></pre><pre><code>const items = document.querySelectorAll(&#39;&#39;);
-items.foreach(item) =&gt; console.log(item);</code></pre><pre><code>3. 回收元素</code></pre><pre><code>const ul = document.querySelector(&#39;.items&#39;);
-ul.remove();//删除元素
-ul.lastElementChild.remove();//删除最后一个元素
-ul.firstElementChild.textContent = &#39;hello&#39;;修改内容
-ul.children[2].innertext = &#39;haha&#39;;//通过索引值获取，innertext获取文本修改
-ul.lastElementChild.innerHTML = &#39;&lt;h1&gt;hello&lt;/h1&gt;&gt;&#39;;//innerHTML增加便签</code></pre><pre><code>4. 事件</code></pre><p>const btn  = document.querySelector(‘.btn’);<br>btn.addEventListener(‘click’,(e) =&gt; {<br>    //表单提交要阻止默认行为,否则会一闪而过<br>    e.preventDefault();<br>    //通过classList.add();增加类<br>});</p>
-<pre><code>5. 表单提交获取</code></pre><p>const myForm = document.querySelector(“#form”);<br>const name = document.querySelector(“#name”);<br>const email = document.querySelector(“#email”);<br>const msg = document.querySelector(“#msg”);<br>const userlist = document.querySelector(“#users”);</p>
-<p>myForm.addeventListener(‘submit’,onsublimt);//创建一个onsubmit函数</p>
-<p>function onsubmit(e){<br>    e.preventDefault();<br>    //判断表单条件<br>    if(name.value === ‘’ || email.value === ‘’){<br>        msg.classList.add(‘error’);<br>        msg.innerHTML = ‘请填写姓名和邮箱’;<br>        setTimeout(() =&gt; msg.remove(),3000);<br>    }else {<br>        const li = document.createELement(‘li’);<br>        li.appendChild(document.createTextNode(‘${name.value} : ${email.value}’));</p>
-<pre><code>    userlist.appendChild(li);
+const person1 = new Person(&#39;John&#39;,&#39;Doe&#39;,&#39;4-3-1980&#39;);
+
+// Class
+class Person{
+    constructor(firstName，lastName，dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.dob = new Date(dob);为了得到日期
+    }
+
+    getYear(){
+        return this.dob.getFullYear();
+    }
+}</code></pre><hr>
+<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><ol>
+<li>选择HTML元素,推荐使用queryselector</li>
+<li>遍历元素</li>
+</ol>
+<pre><code>    const items = document.querySelectorAll(&#39;&#39;);
+    items.foreach(item) =&gt; console.log(item);</code></pre><ol start="3">
+<li>回收元素</li>
+</ol>
+<pre><code>    const ul = document.querySelector(&#39;.items&#39;);
+    ul.remove();//删除元素
+    ul.lastElementChild.remove();//删除最后一个元素
+    ul.firstElementChild.textContent = &#39;hello&#39;;修改内容
+    ul.children[2].innertext = &#39;haha&#39;;//通过索引值获取，innertext获取文本修改
+    ul.lastElementChild.innerHTML = &#39;&lt;h1&gt;hello&lt;/h1&gt;&gt;&#39;;//innerHTML增加便签</code></pre><ol start="4">
+<li>事件</li>
+</ol>
+<pre><code>const btn  = document.querySelector(&#39;.btn&#39;);
+btn.addEventListener(&#39;click&#39;,(e) =&gt; {
+    //表单提交要阻止默认行为,否则会一闪而过
+    e.preventDefault();
+    //通过classList.add();增加类
+});</code></pre><ol start="5">
+<li>表单提交获取</li>
+</ol>
+<pre><code>const myForm = document.querySelector(&quot;#form&quot;);
+const name = document.querySelector(&quot;#name&quot;);
+const email = document.querySelector(&quot;#email&quot;);
+const msg = document.querySelector(&quot;#msg&quot;);
+const userlist = document.querySelector(&quot;#users&quot;);
+
+myForm.addeventListener(&#39;submit&#39;,onsublimt);//创建一个onsubmit函数
+
+function onsubmit(e){
+    e.preventDefault();
+    //判断表单条件
+    if(name.value === &#39;&#39; || email.value === &#39;&#39;){
+        msg.classList.add(&#39;error&#39;);
+        msg.innerHTML = &#39;请填写姓名和邮箱&#39;;
+        setTimeout(() =&gt; msg.remove(),3000);
+    }else {
+        const li = document.createELement(&#39;li&#39;);
+        li.appendChild(document.createTextNode(&#39;${name.value} : ${email.value}&#39;));
 
 
-    name.value = &#39;&#39;;
-    email.value = &#39;&#39;;
-}</code></pre><p>}<br>```</p>
+        userlist.appendChild(li);
 
+
+        name.value = &#39;&#39;;
+        email.value = &#39;&#39;;
+    }
+}</code></pre>
             </div>
             <hr/>
 
@@ -634,8 +710,8 @@ ul.lastElementChild.innerHTML = &#39;&lt;h1&gt;hello&lt;/h1&gt;&gt;&#39;;//inner
                     
                         <div class="article-tag">
                             
-                                <a href="/%E6%A0%87%E7%AD%BE/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/%E6%A0%87%E7%AD%BE/Js/">
+                                    <span class="chip bg-color">Js</span>
                                 </a>
                             
                         </div>
@@ -835,8 +911,12 @@ vue区别于传统的编程方式，是一种声明式编程，完全的数据�
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jww
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/%E5%88%86%E7%B1%BB/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -844,8 +924,8 @@ vue区别于传统的编程方式，是一种声明式编程，完全的数据�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/%E6%A0%87%E7%AD%BE/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/%E6%A0%87%E7%AD%BE/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -1117,7 +1197,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我：18237157918@163.com" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
+        <i class="fa fa-envelope-open"></i>
     </a>
 
 
@@ -1129,7 +1209,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
 
 
