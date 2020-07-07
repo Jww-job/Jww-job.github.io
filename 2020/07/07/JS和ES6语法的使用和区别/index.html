@@ -469,8 +469,7 @@
 <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
 <li>String。Numbers，Boolean，null，undefined</li>
 <li>js中没有设置浮点数,小数和整数在判断类型时都为number</li>
-<li>传统字符串拼接采用 + 的方法来进行，较为复杂，在ES6中使用模板字符串来进行拼接，使用${}的方式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&#96;my name is $&#123;name&#125; and I am &amp;&#123;age&#125;&#96;)&#x2F;&#x2F;切记使用反引号</span><br></pre></td></tr></table></figure>
-</li>
+<li>传统字符串拼接采用 + 的方法来进行，较为复杂，在ES6中使用模板字符串来进行拼接，使用${}的方式<pre><code>console.log(`my name is ${name} and I am &amp;{age}`)//切记使用反引号</code></pre></li>
 </ol>
 <hr>
 <h4 id="字符串的属性和方法"><a href="#字符串的属性和方法" class="headerlink" title="字符串的属性和方法"></a>字符串的属性和方法</h4><ol>
@@ -489,40 +488,85 @@
 <li>在数据末尾添加数据使用push，在开头加入数据使用unshift，去掉最后一项使用pop，判断是否为数组可以使用Array.isArray(),获取某个数据的索引值使用indexof();</li>
 </ol>
 <hr>
-<h4 id="对象语法（键值对）"><a href="#对象语法（键值对）" class="headerlink" title="对象语法（键值对）"></a>对象语法（键值对）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const arr &#x3D; [</span><br><span class="line">	&#123;</span><br><span class="line">		id : 1,</span><br><span class="line">		text: &#39;tomoto&#39;,</span><br><span class="line">		isCool: &#39;true&#39;</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		id : 2,</span><br><span class="line">		text: &#39;banana&#39;,</span><br><span class="line">		isCool: &#39;true&#39;</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		id : 3,</span><br><span class="line">		text: &#39;apple&#39;,</span><br><span class="line">		isCool: &#39;true&#39;</span><br><span class="line">	&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h4 id="对象语法（键值对）"><a href="#对象语法（键值对）" class="headerlink" title="对象语法（键值对）"></a>对象语法（键值对）</h4><pre><code>const arr = [
+    {
+        id : 1,
+        text: &#39;tomoto&#39;,
+        isCool: &#39;true&#39;
+    },
+    {
+        id : 2,
+        text: &#39;banana&#39;,
+        isCool: &#39;true&#39;
+    },
+    {
+        id : 3,
+        text: &#39;apple&#39;,
+        isCool: &#39;true&#39;
+    }
+];</code></pre><ol>
+<li>使用JSON.Stringfy()方法将键值对转化为json数据</li>
+<li>for循环来循环数组<pre><code> for (let i = 0;i&lt; arr.length; i++){
+ console.log(arr[i]);
+}</code></pre></li>
+<li>for…of循环数据(查看数据时不需要添加索引值)<pre><code> for(let arr1 of arr){
+     console.log(arr.text);
+}</code></pre></li>
+<li>foreach,map,filter(foreach和map都是迭代器，filter是选择器)<pre><code> arr.foreach(function(arr1){
+     console.log(arr1.text);
+});</code></pre>使用map会返回一个数值，可以定义变量<pre><code>const arr2 = arr.map(function(arr1){
+     return arr1.text; 返回数组
+});
+</code></pre></li>
+</ol>
+<p>console.log(arr2);</p>
+<p>const isCool = arr.filter(function(arr1){<br>        return arr1.isCool === true;<br>});</p>
+<p>console.log(isCool);</p>
+<p>可以链接<br>const isCool = arr.filter(function(arr1){<br>        return arr1.isCool === true;<br>}).map(function(arr1){<br>        return arr1.text;<br>});</p>
+<p>console.log(isCool);</p>
+<pre><code>
+5. ==和===的区别，==不关注数据类型
+6. 三元操作符 </code></pre><pre><code>const x = 10;
+const y = x &gt; 10 ? 20 : 30;</code></pre><pre><code>*** 
 
-<ol>
-<li><p>使用JSON.Stringfy()方法将键值对转化为json数据</p>
-</li>
-<li><p>for循环来循环数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	for (let i &#x3D; 0;i&lt; arr.length; i++)&#123;</span><br><span class="line">	console.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>for…of循环数据(查看数据时不需要添加索引值)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	for(let arr1 of arr)&#123;</span><br><span class="line">		console.log(arr.text);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>foreach,map,filter(foreach和map都是迭代器，filter是选择器)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	arr.foreach(function(arr1)&#123;</span><br><span class="line">		console.log(arr1.text);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>使用map会返回一个数值，可以定义变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const arr2 &#x3D; arr.map(function(arr1)&#123;</span><br><span class="line">		return arr1.text; 返回数组</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(arr2);</span><br><span class="line"></span><br><span class="line">const isCool &#x3D; arr.filter(function(arr1)&#123;</span><br><span class="line">		return arr1.isCool &#x3D;&#x3D;&#x3D; true;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(isCool);</span><br><span class="line"></span><br><span class="line">可以链接</span><br><span class="line">const isCool &#x3D; arr.filter(function(arr1)&#123;</span><br><span class="line">		return arr1.isCool &#x3D;&#x3D;&#x3D; true;</span><br><span class="line">&#125;).map(function(arr1)&#123;</span><br><span class="line">		return arr1.text; </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(isCool);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>==和===的区别，==不关注数据类型</p>
-</li>
-<li><p>三元操作符 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const x &#x3D; 10;</span><br><span class="line">const y &#x3D; x &gt; 10 ? 20 : 30;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
-<li>ES6箭头函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const addNums &#x3D; (num1,num2) &#x3D;&gt; num1 + num2;</span><br><span class="line">console.log(addNums(5,5));</span><br><span class="line"></span><br><span class="line">arr.foreach(arr1) &#x3D;&gt; console.log(arr1);</span><br></pre></td></tr></table></figure></li>
-<li>面向对象，可以通过构造函数来创建对象,原型链或者ES6的类来给对象添加方法<br> 通过构造函数来实例化对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">	function Person(firstName，lastName，dob)&#123;</span><br><span class="line">	this.firstName &#x3D; firstName;</span><br><span class="line">	this.lastName &#x3D; lastName;</span><br><span class="line">	this.dob &#x3D; dob;</span><br><span class="line">	this.dob &#x3D; new Date(dob);为了得到日期</span><br><span class="line">	this.getYear &#x3D; function()&#123;</span><br><span class="line">		return this.dob.getFullYear();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> &#x2F;&#x2F;通过原型增加</span><br><span class="line">Person.prototype.getYear &#x3D; function()&#123;</span><br><span class="line">	return this.dob.getFullYear();</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">const person1 &#x3D; new Person(&#39;John&#39;,&#39;Doe&#39;,&#39;4-3-1980&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Class</span><br><span class="line">class Person&#123;</span><br><span class="line">	constructor(firstName，lastName，dob)&#123;</span><br><span class="line">		this.firstName &#x3D; firstName;</span><br><span class="line">		this.lastName &#x3D; lastName;</span><br><span class="line">		this.dob &#x3D; dob;</span><br><span class="line">		this.dob &#x3D; new Date(dob);为了得到日期</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getYear()&#123;</span><br><span class="line">		return this.dob.getFullYear();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><ol>
-<li>选择HTML元素,推荐使用queryselector</li>
-<li>遍历元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const items &#x3D; document.querySelectorAll(&#39;&#39;);</span><br><span class="line">items.foreach(item) &#x3D;&gt; console.log(item);</span><br></pre></td></tr></table></figure></li>
-<li>回收元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const ul &#x3D; document.querySelector(&#39;.items&#39;);</span><br><span class="line">ul.remove();&#x2F;&#x2F;删除元素</span><br><span class="line">ul.lastElementChild.remove();&#x2F;&#x2F;删除最后一个元素</span><br><span class="line">ul.firstElementChild.textContent &#x3D; &#39;hello&#39;;修改内容</span><br><span class="line">ul.children[2].innertext &#x3D; &#39;haha&#39;;&#x2F;&#x2F;通过索引值获取，innertext获取文本修改</span><br><span class="line">ul.lastElementChild.innerHTML &#x3D; &#39;&lt;h1&gt;hello&lt;&#x2F;h1&gt;&gt;&#39;;&#x2F;&#x2F;innerHTML增加便签</span><br></pre></td></tr></table></figure></li>
-<li>事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const btn  &#x3D; document.querySelector(&#39;.btn&#39;);</span><br><span class="line">btn.addEventListener(&#39;click&#39;,(e) &#x3D;&gt; &#123;</span><br><span class="line">	&#x2F;&#x2F;表单提交要阻止默认行为,否则会一闪而过</span><br><span class="line">	e.preventDefault();</span><br><span class="line">	&#x2F;&#x2F;通过classList.add();增加类</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li>表单提交获取<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">const myForm &#x3D; document.querySelector(&quot;#form&quot;);</span><br><span class="line">const name &#x3D; document.querySelector(&quot;#name&quot;);</span><br><span class="line">const email &#x3D; document.querySelector(&quot;#email&quot;);</span><br><span class="line">const msg &#x3D; document.querySelector(&quot;#msg&quot;);</span><br><span class="line">const userlist &#x3D; document.querySelector(&quot;#users&quot;);</span><br><span class="line"></span><br><span class="line">myForm.addeventListener(&#39;submit&#39;,onsublimt);&#x2F;&#x2F;创建一个onsubmit函数</span><br><span class="line"></span><br><span class="line">function onsubmit(e)&#123;</span><br><span class="line">	e.preventDefault();</span><br><span class="line">	&#x2F;&#x2F;判断表单条件</span><br><span class="line">	if(name.value &#x3D;&#x3D;&#x3D; &#39;&#39; || email.value &#x3D;&#x3D;&#x3D; &#39;&#39;)&#123;</span><br><span class="line">		msg.classList.add(&#39;error&#39;);</span><br><span class="line">		msg.innerHTML &#x3D; &#39;请填写姓名和邮箱&#39;;</span><br><span class="line">		setTimeout(() &#x3D;&gt; msg.remove(),3000);</span><br><span class="line">	&#125;else &#123;</span><br><span class="line">		const li &#x3D; document.createELement(&#39;li&#39;);</span><br><span class="line">		li.appendChild(document.createTextNode(&#39;$&#123;name.value&#125; : $&#123;email.value&#125;&#39;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		userlist.appendChild(li);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		name.value &#x3D; &#39;&#39;;</span><br><span class="line">		email.value &#x3D; &#39;&#39;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
+### 函数
+1. ES6箭头函数</code></pre><pre><code>const addNums = (num1,num2) =&gt; num1 + num2;
+console.log(addNums(5,5));
+
+arr.foreach(arr1) =&gt; console.log(arr1);</code></pre><pre><code>2. 面向对象，可以通过构造函数来创建对象,原型链或者ES6的类来给对象添加方法
+    通过构造函数来实例化对象</code></pre><pre><code>function Person(firstName，lastName，dob){
+this.firstName = firstName;
+this.lastName = lastName;
+this.dob = dob;
+this.dob = new Date(dob);为了得到日期
+this.getYear = function(){
+    return this.dob.getFullYear();
+}</code></pre><p>}<br> //通过原型增加<br>Person.prototype.getYear = function(){<br>    return this.dob.getFullYear();<br>}</p>
+<p>const person1 = new Person(‘John’,’Doe’,’4-3-1980’);</p>
+<p>// Class<br>class Person{<br>    constructor(firstName，lastName，dob){<br>        this.firstName = firstName;<br>        this.lastName = lastName;<br>        this.dob = dob;<br>        this.dob = new Date(dob);为了得到日期<br>    }</p>
+<pre><code>getYear(){
+    return this.dob.getFullYear();
+}</code></pre><p>}</p>
+<pre><code>*** 
+
+### DOM操作
+1. 选择HTML元素,推荐使用queryselector
+2. 遍历元素</code></pre><pre><code>const items = document.querySelectorAll(&#39;&#39;);
+items.foreach(item) =&gt; console.log(item);</code></pre><pre><code>3. 回收元素</code></pre><pre><code>const ul = document.querySelector(&#39;.items&#39;);
+ul.remove();//删除元素
+ul.lastElementChild.remove();//删除最后一个元素
+ul.firstElementChild.textContent = &#39;hello&#39;;修改内容
+ul.children[2].innertext = &#39;haha&#39;;//通过索引值获取，innertext获取文本修改
+ul.lastElementChild.innerHTML = &#39;&lt;h1&gt;hello&lt;/h1&gt;&gt;&#39;;//innerHTML增加便签</code></pre><pre><code>4. 事件</code></pre><p>const btn  = document.querySelector(‘.btn’);<br>btn.addEventListener(‘click’,(e) =&gt; {<br>    //表单提交要阻止默认行为,否则会一闪而过<br>    e.preventDefault();<br>    //通过classList.add();增加类<br>});</p>
+<pre><code>5. 表单提交获取</code></pre><p>const myForm = document.querySelector(“#form”);<br>const name = document.querySelector(“#name”);<br>const email = document.querySelector(“#email”);<br>const msg = document.querySelector(“#msg”);<br>const userlist = document.querySelector(“#users”);</p>
+<p>myForm.addeventListener(‘submit’,onsublimt);//创建一个onsubmit函数</p>
+<p>function onsubmit(e){<br>    e.preventDefault();<br>    //判断表单条件<br>    if(name.value === ‘’ || email.value === ‘’){<br>        msg.classList.add(‘error’);<br>        msg.innerHTML = ‘请填写姓名和邮箱’;<br>        setTimeout(() =&gt; msg.remove(),3000);<br>    }else {<br>        const li = document.createELement(‘li’);<br>        li.appendChild(document.createTextNode(‘${name.value} : ${email.value}’));</p>
+<pre><code>    userlist.appendChild(li);
+
+
+    name.value = &#39;&#39;;
+    email.value = &#39;&#39;;
+}</code></pre><p>}<br>```</p>
 
             </div>
             <hr/>
