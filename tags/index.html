@@ -358,10 +358,43 @@
             </div>
             <div class="tag-chips">
                 
+                
+                <a href="/%E6%A0%87%E7%AD%BE/%E5%89%8D%E7%AB%AF/" title="前端: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="前端" style="background-color: #F9EBEA;">前端
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
 </div>
+
+    
+    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="tag-wordcloud" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
+<script type="text/javascript">
+    
+
+    $('#tag-wordcloud').jQCloud([{"text":"前端","weight":2,"link":"/标签/前端/"}], {
+        autoResize: true
+    });
+</script>
 
     
 
@@ -456,7 +489,7 @@
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
    <a href="https://github.com/Jww-job" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
+    <i class="fab fa-github"></i>
 </a>
 
 
@@ -467,17 +500,9 @@
 
 
 
-
-
-
-
     <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1121639764" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
-
-
-
-
 
 
 
