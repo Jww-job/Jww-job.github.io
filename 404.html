@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS和ES6语法的使用和区别, 姜维维个人博客">
+    <meta name="keywords" content="姜维维个人博客">
     <meta name="description" content="不忘初心，方得始终">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS和ES6语法的使用和区别 | 姜维维个人博客</title>
+    <title>姜维维个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS和ES6语法的使用和区别</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -458,71 +458,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="js-和-ES6语法的使用和区别"><a href="#js-和-ES6语法的使用和区别" class="headerlink" title="js 和 ES6语法的使用和区别"></a>js 和 ES6语法的使用和区别</h3><hr>
-<h4 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h4><ol>
-<li>js中有三种声明方式 var let const</li>
-<li>var为全局作用域，如果有if语句，使用var声明变量，在if语句外，有相同的变量会造成冲突</li>
-<li>let和const的区别在于，let可以重新赋值,而const不能进行重新赋值，会报错“常量不能当变量赋值”</li>
-<li>当需要重新赋值的时候，使用let，不需要重新赋值时可以使用const，使用const需要赋予初始值</li>
-</ol>
-<hr>
-<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
-<li>String。Numbers，Boolean，null，undefined</li>
-<li>js中没有设置浮点数,小数和整数在判断类型时都为number</li>
-<li>传统字符串拼接采用 + 的方法来进行，较为复杂，在ES6中使用模板字符串来进行拼接，使用${}的方式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&#96;my name is $&#123;name&#125; and I am &amp;&#123;age&#125;&#96;)&#x2F;&#x2F;切记使用反引号</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h4 id="字符串的属性和方法"><a href="#字符串的属性和方法" class="headerlink" title="字符串的属性和方法"></a>字符串的属性和方法</h4><ol>
-<li>字符串的数量 length</li>
-<li>将字符串改变为大写 touppercase</li>
-<li>截取字符串 substring(0,5);</li>
-<li>将字符串分割到数组中 split(‘ ，’),中间可以添加“ ，”分割;</li>
-</ol>
-<hr>
-<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><ol>
-<li>使用/* 内容 */ 实现多行注释</li>
-<li>在js中数组可以保存不同类型的值,可以包含多种变量值</li>
-<li>创建新数组 const arr = new Array(1,2,3,4,5); 或者 const arr = [‘apple’,’tomoto’,’banana’]</li>
-<li>在数组中新增值 arr1[3] = ‘tudou’,</li>
-<li>typescript中新增了静态输入</li>
-<li>在数据末尾添加数据使用push，在开头加入数据使用unshift，去掉最后一项使用pop，判断是否为数组可以使用Array.isArray(),获取某个数据的索引值使用indexof();</li>
-</ol>
-<hr>
-<h4 id="对象语法（键值对）"><a href="#对象语法（键值对）" class="headerlink" title="对象语法（键值对）"></a>对象语法（键值对）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const arr &#x3D; [</span><br><span class="line">	&#123;</span><br><span class="line">		id : 1,</span><br><span class="line">		text: &#39;tomoto&#39;,</span><br><span class="line">		isCool: &#39;true&#39;</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		id : 2,</span><br><span class="line">		text: &#39;banana&#39;,</span><br><span class="line">		isCool: &#39;true&#39;</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		id : 3,</span><br><span class="line">		text: &#39;apple&#39;,</span><br><span class="line">		isCool: &#39;true&#39;</span><br><span class="line">	&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>使用JSON.Stringfy()方法将键值对转化为json数据</p>
-</li>
-<li><p>for循环来循环数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	for (let i &#x3D; 0;i&lt; arr.length; i++)&#123;</span><br><span class="line">	console.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>for…of循环数据(查看数据时不需要添加索引值)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	for(let arr1 of arr)&#123;</span><br><span class="line">		console.log(arr.text);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>foreach,map,filter(foreach和map都是迭代器，filter是选择器)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	arr.foreach(function(arr1)&#123;</span><br><span class="line">		console.log(arr1.text);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>使用map会返回一个数值，可以定义变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const arr2 &#x3D; arr.map(function(arr1)&#123;</span><br><span class="line">		return arr1.text; 返回数组</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(arr2);</span><br><span class="line"></span><br><span class="line">const isCool &#x3D; arr.filter(function(arr1)&#123;</span><br><span class="line">		return arr1.isCool &#x3D;&#x3D;&#x3D; true;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(isCool);</span><br><span class="line"></span><br><span class="line">可以链接</span><br><span class="line">const isCool &#x3D; arr.filter(function(arr1)&#123;</span><br><span class="line">		return arr1.isCool &#x3D;&#x3D;&#x3D; true;</span><br><span class="line">&#125;).map(function(arr1)&#123;</span><br><span class="line">		return arr1.text; </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(isCool);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>==和===的区别，==不关注数据类型</p>
-</li>
-<li><p>三元操作符 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const x &#x3D; 10;</span><br><span class="line">const y &#x3D; x &gt; 10 ? 20 : 30;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
-<li>ES6箭头函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const addNums &#x3D; (num1,num2) &#x3D;&gt; num1 + num2;</span><br><span class="line">console.log(addNums(5,5));</span><br><span class="line"></span><br><span class="line">arr.foreach(arr1) &#x3D;&gt; console.log(arr1);</span><br></pre></td></tr></table></figure></li>
-<li>面向对象，可以通过构造函数来创建对象,原型链或者ES6的类来给对象添加方法<br> 通过构造函数来实例化对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">	function Person(firstName，lastName，dob)&#123;</span><br><span class="line">	this.firstName &#x3D; firstName;</span><br><span class="line">	this.lastName &#x3D; lastName;</span><br><span class="line">	this.dob &#x3D; dob;</span><br><span class="line">	this.dob &#x3D; new Date(dob);为了得到日期</span><br><span class="line">	this.getYear &#x3D; function()&#123;</span><br><span class="line">		return this.dob.getFullYear();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> &#x2F;&#x2F;通过原型增加</span><br><span class="line">Person.prototype.getYear &#x3D; function()&#123;</span><br><span class="line">	return this.dob.getFullYear();</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">const person1 &#x3D; new Person(&#39;John&#39;,&#39;Doe&#39;,&#39;4-3-1980&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Class</span><br><span class="line">class Person&#123;</span><br><span class="line">	constructor(firstName，lastName，dob)&#123;</span><br><span class="line">		this.firstName &#x3D; firstName;</span><br><span class="line">		this.lastName &#x3D; lastName;</span><br><span class="line">		this.dob &#x3D; dob;</span><br><span class="line">		this.dob &#x3D; new Date(dob);为了得到日期</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getYear()&#123;</span><br><span class="line">		return this.dob.getFullYear();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><ol>
-<li>选择HTML元素,推荐使用queryselector</li>
-<li>遍历元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const items &#x3D; document.querySelectorAll(&#39;&#39;);</span><br><span class="line">items.foreach(item) &#x3D;&gt; console.log(item);</span><br></pre></td></tr></table></figure></li>
-<li>回收元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const ul &#x3D; document.querySelector(&#39;.items&#39;);</span><br><span class="line">ul.remove();&#x2F;&#x2F;删除元素</span><br><span class="line">ul.lastElementChild.remove();&#x2F;&#x2F;删除最后一个元素</span><br><span class="line">ul.firstElementChild.textContent &#x3D; &#39;hello&#39;;修改内容</span><br><span class="line">ul.children[2].innertext &#x3D; &#39;haha&#39;;&#x2F;&#x2F;通过索引值获取，innertext获取文本修改</span><br><span class="line">ul.lastElementChild.innerHTML &#x3D; &#39;&lt;h1&gt;hello&lt;&#x2F;h1&gt;&gt;&#39;;&#x2F;&#x2F;innerHTML增加便签</span><br></pre></td></tr></table></figure></li>
-<li>事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const btn  &#x3D; document.querySelector(&#39;.btn&#39;);</span><br><span class="line">btn.addEventListener(&#39;click&#39;,(e) &#x3D;&gt; &#123;</span><br><span class="line">	&#x2F;&#x2F;表单提交要阻止默认行为,否则会一闪而过</span><br><span class="line">	e.preventDefault();</span><br><span class="line">	&#x2F;&#x2F;通过classList.add();增加类</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li>表单提交获取<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">const myForm &#x3D; document.querySelector(&quot;#form&quot;);</span><br><span class="line">const name &#x3D; document.querySelector(&quot;#name&quot;);</span><br><span class="line">const email &#x3D; document.querySelector(&quot;#email&quot;);</span><br><span class="line">const msg &#x3D; document.querySelector(&quot;#msg&quot;);</span><br><span class="line">const userlist &#x3D; document.querySelector(&quot;#users&quot;);</span><br><span class="line"></span><br><span class="line">myForm.addeventListener(&#39;submit&#39;,onsublimt);&#x2F;&#x2F;创建一个onsubmit函数</span><br><span class="line"></span><br><span class="line">function onsubmit(e)&#123;</span><br><span class="line">	e.preventDefault();</span><br><span class="line">	&#x2F;&#x2F;判断表单条件</span><br><span class="line">	if(name.value &#x3D;&#x3D;&#x3D; &#39;&#39; || email.value &#x3D;&#x3D;&#x3D; &#39;&#39;)&#123;</span><br><span class="line">		msg.classList.add(&#39;error&#39;);</span><br><span class="line">		msg.innerHTML &#x3D; &#39;请填写姓名和邮箱&#39;;</span><br><span class="line">		setTimeout(() &#x3D;&gt; msg.remove(),3000);</span><br><span class="line">	&#125;else &#123;</span><br><span class="line">		const li &#x3D; document.createELement(&#39;li&#39;);</span><br><span class="line">		li.appendChild(document.createTextNode(&#39;$&#123;name.value&#125; : $&#123;email.value&#125;&#39;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		userlist.appendChild(li);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		name.value &#x3D; &#39;&#39;;</span><br><span class="line">		email.value &#x3D; &#39;&#39;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
+                <hr>
+<p> 标题：404<br>日期：2020-05-30 00:00:00<br>类型：“ 404 ”<br>布局：“ 404 ”<br>说明：“找不到您想要的页面:( ”<br>-</p>
 
             </div>
             <hr/>
@@ -548,7 +485,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jww-job.github.io/2020/07/07/JS%E5%92%8CES6%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E5%8C%BA%E5%88%AB/">https://jww-job.github.io/2020/07/07/JS%E5%92%8CES6%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E5%8C%BA%E5%88%AB/</a>
+                    <a href="https://jww-job.github.io/404.html">https://jww-job.github.io/404.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -756,23 +693,21 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/07/07/JS%E5%92%8CES6%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E5%8C%BA%E5%88%AB/">
+                <a href="/404.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JS和ES6语法的使用和区别">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">JS和ES6语法的使用和区别</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            js 和 ES6语法的使用和区别
-变量声明
-js中有三种声明方式 var let const
-var为全局作用域，如果有if语句，使用var声明变量，在if语句外，有相同的变量会造成冲突
-let和const的区别在于，let可以重新赋值,而
+                            
+ 标题：404日期：2020-05-30 00:00:00类型：“ 404 ”布局：“ 404 ”说明：“找不到您想要的页面:( ”-
+
                         
                     </div>
                     <div class="publish-info">
@@ -795,22 +730,24 @@ let和const的区别在于，let可以重新赋值,而
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/07/hello-world/">
+                <a href="/404.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            
+ 标题：404日期：2020-05-30 00:00:00类型：“ 404 ”布局：“ 404 ”说明：“找不到您想要的页面:( ”-
+
                         
                     </div>
                     <div class="publish-info">
@@ -825,6 +762,7 @@ let和const的区别在于，let可以重新赋值,而
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
